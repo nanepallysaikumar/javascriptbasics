@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Asyncrnous javascript</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <h1>Asyncrnous javascript</h1>
+        <script>
+        
+            // const second = () => {
+            //     console.log("i am in second function")
+            //     setTimeout(() => {
+            //         console.log("i am in async second function");
+            //     }, 2000)
+            // }
+
+            // const first = () => {
+            //     console.log("i am in first");
+            //     second();
+            //     console.log("end of the first function");
+            // }
+
+            // first();
+            // old way of Asyncrnous code 
+
+            function Receipe() {
+                setTimeout(() => {
+                    const receipeId = [1,2,3,4,5,6];
+                    const receipe = {
+                        title: "biryani",
+                        style: "indian"
+                    }
+                    console.log(receipeId);
+                    setTimeout((id) => {
+                        console.log(`${id}: ${receipe.title} `);
+                        setTimeout(() => {
+                            console.log(`${id}: ${receipe.style} `);
+                        },1600)
+                    },1000,receipeId[2])
+                },1500)
+            }
+
+            Receipe();
+        </script>
+    </body>
+</html>
